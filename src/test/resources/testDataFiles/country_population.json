@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Nation": {
+            "type": "string"
+          },
+          "Year": {
+            "type": "string",
+            "pattern": "^\\d{4}$"
+          },
+          "Population": {
+            "type": "integer"
+          },
+          "Slug Nation": {
+            "type": "string"
+          },
+          "ID Nation": {
+            "type": "string"
+          },
+          "ID Year": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Nation",
+          "Year",
+          "Population",
+          "Slug Nation",
+          "ID Nation",
+          "ID Year"
+        ]
+      }
+    },
+    "source": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "measures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "substitutions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "annotations": {
+            "type": "object",
+            "properties": {
+              "topic": {
+                "type": "string"
+              },
+              "dataset_name": {
+                "type": "string"
+              },
+              "dataset_link": {
+                "type": "string",
+                "format": "uri"
+              },
+              "table_id": {
+                "type": "string"
+              },
+              "source_name": {
+                "type": "string"
+              },
+              "subtopic": {
+                "type": "string"
+              },
+              "source_description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "topic",
+              "dataset_name",
+              "dataset_link",
+              "table_id",
+              "source_name",
+              "subtopic",
+              "source_description"
+            ]
+          }
+        },
+        "required": [
+          "measures",
+          "substitutions",
+          "name",
+          "annotations"
+        ]
+      }
+    }
+  },
+  "required": [
+    "data",
+    "source"
+  ]
+}
